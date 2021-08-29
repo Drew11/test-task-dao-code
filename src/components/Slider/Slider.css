@@ -1,0 +1,7 @@
+.slider-view {
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    align-items: flex-end;
+    margin: 0 5px 20px;
+}

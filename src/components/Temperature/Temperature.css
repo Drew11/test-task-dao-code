@@ -1,0 +1,31 @@
+.temperature {
+    color:#282c34;
+    font-weight: 500;
+    font-size: 12px;
+    max-width: max-content;
+    padding: 1px 6px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-right: 10px;
+}
+  .temperature[data-status="cold"] {
+    background-color: #00ffff
+  }
+  
+  .temperature[data-status="normal"] {
+    background-color: #fff700;
+  }
+  
+  .temperature[data-status="hot"] {
+    background-color: #ff8c00;
+  }
+
+  .temperature[data-status="ice"] {
+    background-color: #0059ff;
+    color: #ffffff;
+  }
+
+  .temperature[data-status="fire"] {
+    background-color: #ff1e00;
+    color: #ffffff;
+  }

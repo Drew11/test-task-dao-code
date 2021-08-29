@@ -1,0 +1,35 @@
+.weather-view {
+    flex: 1 1 auto;
+}
+
+.weather {
+    display: flex;
+    height: 100px;
+    margin: 30px 100px 0;
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.weather-icon {
+    min-width: 100px;
+}
+
+.weather-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.weather-city,
+.weather-country {
+    font-weight: 500;
+    color: #e96e50;
+}
+
+.weather-country-flag {
+    margin: 0 6px;
+}
+.weather-description {
+  font-style: italic;
+  font-weight: 600;
+}
