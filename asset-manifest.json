@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.cc700a1c.chunk.css",
-    "main.js": "/static/js/main.f78afa43.chunk.js",
-    "main.js.map": "/static/js/main.f78afa43.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.caac5af0.js",
-    "runtime-main.js.map": "/static/js/runtime-main.caac5af0.js.map",
-    "static/js/2.f2b5d28d.chunk.js": "/static/js/2.f2b5d28d.chunk.js",
-    "static/js/2.f2b5d28d.chunk.js.map": "/static/js/2.f2b5d28d.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.cc700a1c.chunk.css.map": "/static/css/main.cc700a1c.chunk.css.map",
-    "static/js/2.f2b5d28d.chunk.js.LICENSE.txt": "/static/js/2.f2b5d28d.chunk.js.LICENSE.txt",
-    "static/media/error.ad8a62dc.svg": "/static/media/error.ad8a62dc.svg"
+    "main.css": "/test-task-dao-code/static/css/main.cc700a1c.chunk.css",
+    "main.js": "/test-task-dao-code/static/js/main.f78afa43.chunk.js",
+    "main.js.map": "/test-task-dao-code/static/js/main.f78afa43.chunk.js.map",
+    "runtime-main.js": "/test-task-dao-code/static/js/runtime-main.ed673c76.js",
+    "runtime-main.js.map": "/test-task-dao-code/static/js/runtime-main.ed673c76.js.map",
+    "static/js/2.f2b5d28d.chunk.js": "/test-task-dao-code/static/js/2.f2b5d28d.chunk.js",
+    "static/js/2.f2b5d28d.chunk.js.map": "/test-task-dao-code/static/js/2.f2b5d28d.chunk.js.map",
+    "index.html": "/test-task-dao-code/index.html",
+    "static/css/main.cc700a1c.chunk.css.map": "/test-task-dao-code/static/css/main.cc700a1c.chunk.css.map",
+    "static/js/2.f2b5d28d.chunk.js.LICENSE.txt": "/test-task-dao-code/static/js/2.f2b5d28d.chunk.js.LICENSE.txt",
+    "static/media/error.ad8a62dc.svg": "/test-task-dao-code/static/media/error.ad8a62dc.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.caac5af0.js",
+    "static/js/runtime-main.ed673c76.js",
     "static/js/2.f2b5d28d.chunk.js",
     "static/css/main.cc700a1c.chunk.css",
     "static/js/main.f78afa43.chunk.js"
