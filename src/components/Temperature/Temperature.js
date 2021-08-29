@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatTemperature, getStatusTemperature } from '../../helpers/utils';
+import { formatUnits, getStatusTemperature } from '../../helpers/utils';
 
 import './Temperature.css';
 
@@ -17,10 +17,10 @@ function Temperature(props) {
     <div className="temperature-view">
       <div >
           <span className="temperature" data-status={getStatusTemperature(temp)}>
-            {formatTemperature(temp)}
+            {formatUnits(temp)}
           </span>
           <span>
-            temperature from {tempMin} to {tempMax} °С,
+            temperature from {tempMin.toFixed(1)} to {tempMax.toFixed(1)} °С,
             humidity {humidity} wind, {wind} m/s. clouds {clouds}%
           </span>
       </div>

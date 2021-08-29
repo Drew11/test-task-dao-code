@@ -11,21 +11,19 @@ export class ApiService {
 
   async getData(url) {
     try {
-      const response =  await axios.get(url);
-      return response.data;
+        const response =  await axios.get(url);
+        return response.data;
     } catch (err) {
-      throw err.response.data.message;
+        throw err.response.data.message;
     }
   }
 
-  async getWeatherByQuery(query) {
+  getWeatherByQuery = async (query) => {
     const url = `${this._baseUrl}?q=${query}&units=metric&appid=${openWeatherApiKey}`;
-    console.log(url)
     return await this.getData(url);
   }
 
-  async getWeather(coords) {
+  getWeatherByCoords = async (coords)  => {
     return await this.getData(this._getWeatherRequestUrl(coords));
   }
 }
-

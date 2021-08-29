@@ -5,6 +5,7 @@ import Slider from '../Slider/Slider';
 import Error from '../Error/Error';
 import Spinner from '../Spinner/Spinner';
 import { ApiService } from '../../api/index';
+import { formatTemperature } from '../../helpers/utils';
 import './App.css';
 
 function App() {
@@ -16,45 +17,46 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const onError = (error) => {
+    setError(error);
+    setLoading(false);
+    setWeather(null);
+  };
+
+  const onFetch = (fn, params) => {
+       setLoading(true);
+       fn(params).then(data => {
+          setWeather(data);
+          setTemperature(formatTemperature(data.main.temp));
+          setLoading(false);
+          setError(null);
+        })
+        .catch(error => {
+          onError(error);
+        });
+  };
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       function success(position) {
-        setLoading(true)
-        service.getWeather(position.coords).then(data => {
-            setWeather(data);
-            setTemperature(data.main.temp);
-            setLoading(false);
-        });
+        onFetch(service.getWeatherByCoords, position.coords);
       },
       function error(error) {
-        setError(error.message)
-        setLoading(false)
+        onError(error.message);
       });
   }, []);
 
   useEffect(() => {
     if (searchQuery) {
-      setLoading(true)
-      service.getWeatherByQuery(searchQuery)
-        .then(data => {
-          setWeather(data);
-          setTemperature(data.main.temp);
-          setError(null);
-          setLoading(false);
-        })
-        .catch(err => {
-          setWeather(null);
-          setError(err)
-          setLoading(false)
-        });
+      onFetch(service.getWeatherByQuery, searchQuery);
     }
-  }, [searchQuery, error]);
+  }, [searchQuery]);
 
   const errorView = error && !loading && <Error error={error} />;
   const weatherView = weather && !loading && <Weather weather={weather} temperature={temperature} />;
+  const sliderView = weather && !loading && <Slider temperature={temperature} setTemperature={setTemperature} />;
   const spinnerView = loading && <Spinner />;
-  const sliderView =  weather && !loading && <Slider temperature={temperature} setTemperature={setTemperature}/>;
-
+  
   return (
     <div className="App">
       <header className="header">
@@ -66,7 +68,6 @@ function App() {
         </div>
         <Search
           setSearchQuery={setSearchQuery}
-          searchQuery={searchQuery}
         />
         {weatherView}
         {errorView}

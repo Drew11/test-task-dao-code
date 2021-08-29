@@ -1,13 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Search.css';
 
-function Search({ searchQuery, setSearchQuery }) {
+function Search({ setSearchQuery }) {
 
-    const onChangeSearchQuery = (event) => {
+    const [query, setQuery] = useState('');
+
+    const onChangeQuery = (event) => {
+        setQuery(event.target.value)
+    };
+
+    const sendQuery = (event) => {
         if (event.code === 'Enter') {
             setSearchQuery(event.target.value)
         }
-    }
+    };
 
     return (
         <div className="search-view">
@@ -15,9 +21,9 @@ function Search({ searchQuery, setSearchQuery }) {
                 <input
                     className="search-input"
                     type="text"
-                    defaultValue={searchQuery}
-                    onChange={onChangeSearchQuery}
-                    onKeyDown={onChangeSearchQuery}
+                    value={query}
+                    onChange={onChangeQuery}
+                    onKeyDown={sendQuery}
                     placeholder="Type city"
                 />
             </div>

@@ -1,4 +1,4 @@
-export function formatTemperature (temp) {
+export function formatUnits (temp) {
     return temp + '\xB0C.';
 }
 
@@ -10,4 +10,8 @@ export function getStatusTemperature (temp) {
         [temp>=10 && temp < 30]: 'normal',
         [temp>30 && temp < 100]: 'hot'
     }[true]
+}
+
+export function formatTemperature (temp) {
+   return Number(temp.toFixed(1))
 }
